@@ -1,0 +1,30 @@
+services:
+  postgres:
+    env_file: .env
+    image: "postgres:${POSTGRES_VERSION}"
+    container_name: 'postgres'
+    restart: always
+    ports:
+      - 5432:5432
+    
+      
+  
+  redis: 
+    env_file: .env
+    image: "redis:${REDIS_VERSION}"
+    container_name: 'redis'
+    restart: always
+    ports: 
+     - 6379:6379
+
+  
+  rabbitmq:
+    env_file: .env
+    image: "rabbitmq:${RABBITMQ_VERSION}"
+    container_name: 'rabbitmq'
+    restart: always
+    ports: 
+     - 5672:5672
+      
+  
+ 
